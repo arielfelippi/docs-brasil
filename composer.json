@@ -1,0 +1,35 @@
+{
+    "name": "arielfelippi/docs-brasil",
+    "description": "Gerenciador de documentos brasileiros, como: CPF, CNPJ, IE, CNH...",
+    "type": "library",
+    "keywords": [
+        "docs",
+        "Brasil",
+        "brasil",
+        "docs-brasil",
+        "DocsBrasil",
+        "CPF",
+        "CNPJ",
+        "IE",
+        "CNH",
+        "documentos",
+        "documents"
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "DocsBrasil\\": "src/DocsBrasil/"
+        }
+    },
+    "authors": [
+        {
+            "name": "arielfelippi",
+            "email": "ariel.felippi@hotmail.com",
+            "homepage": "https://github.com/arielfelippi"
+        }
+    ],
+    "minimum-stability": "stable"
+}
