@@ -23,13 +23,6 @@ class Cnpj
         return new self($cnpj);
     }
 
-    public static function removeMask(string $cnpj): string
-    {
-        $cnpj = trim(preg_replace('/[^0-9]/is', '', $cnpj));
-
-        return str_pad($cnpj, 14, '0', STR_PAD_LEFT);
-    }
-
     public static function addMask(): string
     {
         $cnpjString = self::$cnpj;
@@ -55,6 +48,13 @@ class Cnpj
     private static function setCnpj(string $cnpj): void
     {
         self::$cnpj = self::removeMask($cnpj);
+    }
+
+    private static function removeMask(string $cnpj): string
+    {
+        $cnpj = trim(preg_replace('/[^0-9]/is', '', $cnpj));
+
+        return str_pad($cnpj, 14, '0', STR_PAD_LEFT);
     }
 
     private static function validateInternal(string $cnpj): bool
