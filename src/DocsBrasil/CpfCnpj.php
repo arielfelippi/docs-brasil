@@ -7,7 +7,7 @@ namespace DocsBrasil;
 class CpfCnpj
 {
     private static $value = '';
-    private static $instance;
+    private static $instance = null;
 
     public function __construct(string $value = '')
     {
@@ -19,22 +19,22 @@ class CpfCnpj
         return self::$value;
     }
 
-    public static function init(string $value = ''): CpfCnpj
+    public static function init(string $value = '')
     {
+        self::$instance = null;
         self::setValue($value);
 
-        if (strlen(self::$value) <= 11 || empty(self::$value)) {
-            return self::$instance = new Cpf(self::$value);
+        if (self::isCpf()) {
+            return self::createInstance(new Cpf(self::$value));
         }
 
-        if (strlen(self::$value) <= 14) {
-            return self::$instance = new Cnpj(self::$value);
+        if (self::isCnpj()) {
+            return self::createInstance(new Cnpj(self::$value));
         }
 
         self::setValue(substr(self::$value, 0, 14));
-        self::$instance = new CpfCnpj(self::$value);
 
-        return self::$instance;
+        return self::createInstance(new Cnpj(self::$value));
     }
 
     public static function addMask(): string
@@ -55,5 +55,20 @@ class CpfCnpj
     private static function removeMask(string $value): string
     {
         return trim(preg_replace('/[^0-9]/is', '', $value));
+    }
+
+    private static function isCpf(): bool
+    {
+        return strlen(self::$value) <= 11 && !empty(self::$value);
+    }
+
+    private static function isCnpj(): bool
+    {
+        return strlen(self::$value) > 11 && strlen(self::$value) <= 14;
+    }
+
+    private static function createInstance($instance)
+    {
+        return self::$instance = $instance;
     }
 }
