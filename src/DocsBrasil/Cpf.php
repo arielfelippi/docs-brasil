@@ -4,8 +4,12 @@ declare(strict_types=1);
 
 namespace DocsBrasil;
 
+use DocsBrasil\Masks\Masks;
+use DocsBrasil\Traits\MaskTraits;
+
 class Cpf
 {
+    use MaskTraits;
     private static $cpf = '';
 
     public function __construct(string $cpf = '')
@@ -31,12 +35,7 @@ class Cpf
             $cpfString = self::removeMask(self::$cpf);
         }
 
-        $bloco_1 = substr($cpfString, 0, 3);
-        $bloco_2 = substr($cpfString, 3, 3);
-        $bloco_3 = substr($cpfString, 6, 3);
-        $blocoVerificador = substr($cpfString, -2);
-
-        return "{$bloco_1}.{$bloco_2}.{$bloco_3}-{$blocoVerificador}";
+        return self::addMaskToValue($cpfString, Masks::CPF);
     }
 
     public static function validate(): bool

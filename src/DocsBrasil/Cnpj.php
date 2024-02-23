@@ -4,8 +4,12 @@ declare(strict_types=1);
 
 namespace DocsBrasil;
 
+use DocsBrasil\Masks\Masks;
+use DocsBrasil\Traits\MaskTraits;
+
 class Cnpj
 {
+    use MaskTraits;
     private static $cnpj = '';
 
     public function __construct(string $cnpj = '')
@@ -31,13 +35,7 @@ class Cnpj
             $cnpjString = self::removeMask(self::$cnpj);
         }
 
-        $bloco_1 = substr($cnpjString, 0, 2);
-        $bloco_2 = substr($cnpjString, 2, 3);
-        $bloco_3 = substr($cnpjString, 5, 3);
-        $bloco_4 = substr($cnpjString, 8, 4);
-        $blocoVerificador = substr($cnpjString, -2);
-
-        return "{$bloco_1}.{$bloco_2}.{$bloco_3}/{$bloco_4}-{$blocoVerificador}";
+        return self::addMaskToValue($cnpjString, Masks::CNPJ);
     }
 
     public static function validate(): bool

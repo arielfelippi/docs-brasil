@@ -11,11 +11,11 @@ class Celular
 
     public function __construct(string $numero)
     {
-        $this->numero = $this->getOnlyNumbers($numero);
+        $this->numero = $this->removeMask($numero);
         $this->buildCellphone();
     }
 
-    private function getOnlyNumbers(string $numero)
+    private function removeMask(string $numero)
     {
         $numero = trim(preg_replace('/\D/', '', $numero));
 
@@ -33,6 +33,7 @@ class Celular
 
     /**
      * function validateDDD
+     *
      * Valida os prefixos(DDD).
      *
      * @return boolean
@@ -60,7 +61,8 @@ class Celular
 
     /**
      * function validateCellphone
-     * Valida numero de celular, inibe numeros repetidos Ex.: 11111111111.
+     *
+     * Valida numero de celular, inibe números repetidos Ex.: 11111111111.
      *
      * @return boolean
      */
@@ -77,7 +79,7 @@ class Celular
 
     /**
      * function nineDigitCellphone
-     * Ajusta o numero do telefone para 9 digitos.
+     * Ajusta o numero do telefone para 9 dígitos.
      * Entrada: 96912345|5496912345|555496912345.
      * Saída: 996912345|54996912345|5554996912345
      *
