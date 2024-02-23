@@ -10,6 +10,7 @@ use DocsBrasil\Traits\MaskTraits;
 class Cnpj
 {
     use MaskTraits;
+
     private static $cnpj = '';
 
     public function __construct(string $cnpj = '')

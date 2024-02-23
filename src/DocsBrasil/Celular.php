@@ -7,6 +7,7 @@ namespace DocsBrasil;
 class Celular
 {
     private const PREFIXO_BRASIL = 55;
+
     private string $numero = '';
 
     public function __construct(string $numero)

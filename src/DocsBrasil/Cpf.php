@@ -10,6 +10,7 @@ use DocsBrasil\Traits\MaskTraits;
 class Cpf
 {
     use MaskTraits;
+
     private static $cpf = '';
 
     public function __construct(string $cpf = '')
