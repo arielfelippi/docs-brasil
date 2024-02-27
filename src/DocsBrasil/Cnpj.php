@@ -51,7 +51,7 @@ class Cnpj
 
     private static function removeMask(string $cnpj): string
     {
-        $cnpj = trim(preg_replace('/[^0-9]/is', '', $cnpj));
+        $cnpj = trim(preg_replace('/[^0-9]/', '', $cnpj));
 
         return str_pad($cnpj, 14, '0', STR_PAD_LEFT);
     }

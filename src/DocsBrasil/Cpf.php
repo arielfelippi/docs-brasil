@@ -51,7 +51,7 @@ class Cpf
 
     private static function removeMask(string $cpf): string
     {
-        $cpf = trim(preg_replace('/[^0-9]/is', '', $cpf));
+        $cpf = trim(preg_replace('/[^0-9]/', '', $cpf));
 
         return str_pad($cpf, 11, '0', STR_PAD_LEFT);
     }

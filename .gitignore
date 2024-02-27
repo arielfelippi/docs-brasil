@@ -24,6 +24,7 @@ auth.json
 .env.backup
 .env.production
 .phpunit.result.cache
+.php-cs-fixer.cache
 npm-debug.log
 yarn-error.log
 composer.lock
