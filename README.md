@@ -3,7 +3,7 @@
 Este arquivo contém a documentação das classes PHP relacionadas a CPF, CNPJ e CPF/CNPJ.
 
 ## Instalação
-### via Composer
+### Via composer
 
 ```shell
 $\> composer require arielfelippi/docs-brasil
