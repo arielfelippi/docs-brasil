@@ -8,6 +8,12 @@ Este arquivo contém a documentação das classes PHP relacionadas a CPF, CNPJ e
 ```shell
 $\> composer require arielfelippi/docs-brasil
 ```
+## Dependência de instalação (requires)
+- php: >=7.4
+
+## Dependência de instalação DEV (requires-dev)
+- friendsofphp/php-cs-fixer: ^3.49
+- pestphp/pest: ^2.34
 
 ## Classes
 
