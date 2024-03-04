@@ -6,7 +6,7 @@ Este arquivo contém a documentação das classes PHP relacionadas a CPF, CNPJ e
 ### Via composer
 
 ```shell
-$\> composer require arielfelippi/docs-brasil
+composer require arielfelippi/docs-brasil
 ```
 ## Dependência de instalação (requires)
 - php: >=7.4
