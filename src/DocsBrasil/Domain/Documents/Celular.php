@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace DocsBrasil;
+namespace DocsBrasil\Domain\Documents;
 
 class Celular
 {

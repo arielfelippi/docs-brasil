@@ -36,7 +36,8 @@
     },
     "autoload": {
         "psr-4": {
-            "DocsBrasil\\": "src/DocsBrasil/"
+            "DocsBrasil\\Domain\\": "src/Domain/",
+            "DocsBrasil\\Kernel\\": "src/Kernel/"
         }
     },
     "require-dev": {

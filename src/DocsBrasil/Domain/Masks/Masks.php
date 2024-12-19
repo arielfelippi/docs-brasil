@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace DocsBrasil\Masks;
+namespace DocsBrasil\Domain\Masks;
 
 final class Masks
 {
