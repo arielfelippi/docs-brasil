@@ -16,6 +16,7 @@ class ServiceFactory
             'cpf' => new \DocsBrasil\Domain\Documents\Cpf(),
             'cnpj' => new \DocsBrasil\Domain\Documents\Cnpj\Cnpj(),
             'cnpjAlfa' => new \DocsBrasil\Domain\Documents\Cnpj\CnpjAlfa(),
+            'cpfCnpj' => new \DocsBrasil\Domain\Documents\CpfCnpj(),
             'anyCnpj' => new \DocsBrasil\Domain\Documents\AnyCnpj(),
             default => throw new \InvalidArgumentException("Service {$service} not found."),
         };

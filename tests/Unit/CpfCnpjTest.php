@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use DocsBrasil\CpfCnpj;
+use DocsBrasil\Kernel\Facades\CpfCnpj;
 
 it('validates CPF and adds mask', function () {
     $cpf = '52998224725'; // CPF válido sem máscara

@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use DocsBrasil\Cpf;
+use DocsBrasil\Kernel\Facades\Cpf;
 
 it('validates CPF', function () {
     $validCpf = '529.982.247-25';

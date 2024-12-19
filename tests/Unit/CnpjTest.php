@@ -2,7 +2,7 @@
 
 namespace Tests\Unit;
 
-use DocsBrasil\Cnpj;
+use DocsBrasil\Domain\Documents\Cnpj\Cnpj;
 
 it('validates CNPJ', function () {
     $validCnpj = '19.228.187/0001-03';

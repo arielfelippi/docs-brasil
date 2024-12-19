@@ -15,6 +15,7 @@ class Registry
             'cpf',
             'cnpj',
             'CnpjAlfa',
+            'cpfCnpj',
             'anyCnpj',
         ];
     }
