@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace DocsBrasil\Domain\Documents;
 
+use DocsBrasil\Domain\Documents\Cnpj\Cnpj;
+
 class CpfCnpj
 {
     private static $value = '';
