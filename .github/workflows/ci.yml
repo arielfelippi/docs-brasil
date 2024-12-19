@@ -11,6 +11,9 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        php-version: ['8.0', '8.1', '8.2', '8.3'] # Adiciona suporte a múltiplas versões de PHP
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
@@ -18,7 +21,7 @@ jobs:
       - name: Set up PHP
         uses: shivammathur/setup-php@v2
         with:
-          php-version: '7.4'
+          php-version: ${{ matrix.php-version }}
           extensions: mbstring
 
       - name: Install dependencies

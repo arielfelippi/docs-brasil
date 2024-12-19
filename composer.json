@@ -26,6 +26,14 @@
     "require": {
         "php": ">=7.4"
     },
+    "config": {
+        "platform": {
+            "php": "8.1"
+        },
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
     "autoload": {
         "psr-4": {
             "DocsBrasil\\": "src/DocsBrasil/"
@@ -42,10 +50,5 @@
         "pest-tests": [
             "pest --dirty"
         ]
-    },
-    "config": {
-        "allow-plugins": {
-            "pestphp/pest-plugin": true
-        }
     }
 }
